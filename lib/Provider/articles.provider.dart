@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:semana3noticias/Models/articles.model.dart';
 
 class ArticleProvider {
-  Future<List<Article>> fetchArticles() async {
+
+  Future<List<Article>> fetchArticles({int page = 1}) async {
     List<Article> articleList = [];
     var url = Uri.https(
       'newsapi.org',
@@ -12,7 +13,9 @@ class ArticleProvider {
         'q': 'tesla',
         'from': '2021-09-15',
         'sortBy': 'publishedAt',
-        'apiKey': 'e8f01d6b811144ca8e90b630baa05224'
+        'apiKey': 'e8f01d6b811144ca8e90b630baa05224',
+        'pageSize': '20',
+        'page': '${page}'
       },
     );
 
