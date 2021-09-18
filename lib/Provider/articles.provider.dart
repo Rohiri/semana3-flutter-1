@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:semana3noticias/Models/articles.model.dart';
 
 class ArticleProvider {
-  Future<List<Article>> getArticles() async {
+  Future<List<Article>> fetchArticles() async {
     List<Article> articleList = [];
     var url = Uri.https(
       'newsapi.org',
